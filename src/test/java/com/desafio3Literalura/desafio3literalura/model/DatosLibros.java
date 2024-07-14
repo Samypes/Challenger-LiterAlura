@@ -1,24 +1,20 @@
 package com.desafio3Literalura.desafio3literalura.model;
 
-import org.junit.jupiter.api.Test;
+import java.awt.*;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DatosLibros(
 
-class DatosLibrosTest {
+        @JsonAlias("title") String titulo,
 
-    @Test
-    void titulo() {
-    }
+        @JsonAlias("authors")List<DatosAutor> autor,
 
-    @Test
-    void autor() {
-    }
+        @JsonAlias("languages")List<String> idiomas,
 
-    @Test
-    void idiomas() {
-    }
+        @JsonAlias("download_count")Double numeroDeDesacargas,
 
-    @Test
-    void numeroDeDesacargas() {
-    }
+
+
+) {
 }
